@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi página con animación</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      gap: 20px;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth; /* Habilita desplazamiento suave */
+    }
+
+    .contenedor {
+      width: 80vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .contenedor .frame {
+      flex: 1;
+      border: 2px solid #555;
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #111;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .contenedor .frame:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .inferior {
+      width: 80vw;
+      border: 2px solid #666;
+      padding: 15px;
+      background-color: #222;
+      color: #ddd;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .galeria-extra {
+      width: 80vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .galeria-extra .imagen-extra {
+      flex: 1;
+      border: 2px solid #555;
+      padding: 10px;
+      background-color: #111;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .galeria-extra .imagen-extra:nth-child(1) {
+      animation-delay: 1.5s;
+    }
+
+    .galeria-extra .imagen-extra:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    .imagen-boton {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin-bottom: 40px;
+    }
+
+    .imagen-boton:hover {
+      transform: scale(1.05);
+    }
+
+    #info-extra {
+      width: 80vw;
+      border: 2px dashed #555;
+      padding: 30px;
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="contenedor">
+    <div class="frame">
+      <h3>Grand theft auto</h3>
+      <img src="gta.jpg" alt="Imagen del logo de gta"/>
+    </div>
+
+    <div class="frame">
+      <h3>GtaVI</h3>
+      <iframe src="https://www.youtube.com/embed/l6RRdTFuepk" title="YouTube video player" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="inferior">
+    <h3>Descripción</h3>
+    <p>
+      En la parte izquierda se muestra una imagen del logo de uno de los juegos más esperados de la historia: <em>“GTA”</em>.
+      A la derecha, un video.
+    </p>
+  </div>
+
+  <!-- NUEVA SECCIÓN DE IMÁGENES ADICIONALES -->
+  <div class="galeria-extra">
+    <div class="imagen-extra">
+      <h4>Logo tipo</h4>
+      <img src="gtav.jpg" alt="Imagen extra 1">
+    </div>
+    <div class="imagen-extra">
+      <h4></h4>
+      <img src="g.jpg" alt="Imagen extra 2">
+      <p>
+        Fecha de Lanzamiento
+      </p>
+    </div>
+  </div>
+
+  <!-- IMAGEN INTERACTIVA COMO BOTÓN -->
+  <!-- IMAGEN INTERACTIVA COMO BOTÓN (con funciones de clic y doble clic) -->
+<img class="imagen-boton" src="l.jpg" alt="Ir a más información" id="boton-navegacion" />
+<script>
+  const boton = document.getElementById('boton-navegacion');
+
+  boton.addEventListener('click', () => {
+    document.getElementById('info-extra').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  boton.addEventListener('dblclick', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <!-- SECCIÓN DE DESTINO VACÍA -->
+  <div id="info-extra">
+    <h3>Información</h3>
+    <p>GTA 6 es la próxima entrega de la aclamada saga de videojuegos de mundo abierto desarrollada por Rockstar Games. Está previsto para lanzarse en 2025 y promete una evolución significativa en cuanto a escala, detalle y realismo.
+
+Contexto clave:
+Ambientación: El juego se desarrollará principalmente en una versión moderna de Vice City (inspirada en Miami), dentro de un nuevo estado ficticio llamado Leonida. Este mundo será mucho más grande y dinámico que en entregas anteriores.
+
+Protagonistas: Tendrá dos personajes principales: Lucía (la primera protagonista femenina jugable en la saga) y su pareja Jason, al estilo de Bonnie y Clyde. Se espera que la narrativa explore su relación y actividades criminales.
+
+Mundo vivo: Se ha confirmado que el mapa incluirá áreas urbanas y rurales, con eventos dinámicos, NPCs más inteligentes y un entorno que evoluciona con el tiempo.
+
+Tecnología y gráficos: Usará una versión mejorada del motor RAGE, lo que permitirá gráficos realistas, físicas avanzadas y animaciones faciales de última generación.
+
+Lanzamiento: Está anunciado para PlayStation 5 y Xbox Series X/S, aunque aún no hay una fecha concreta para PC.
+.</p>
+<h4>Jason And Lucia</h4>
+<img src="ñ.jpg" alt="Imagen extra 2">
+  </div>
+
+</body>
+</html>
